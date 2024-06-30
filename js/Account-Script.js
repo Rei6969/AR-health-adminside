@@ -6,12 +6,15 @@ import {
   browserSessionPersistence,
   signOut,
   sendEmailVerification,
+  sendPasswordResetEmail,
+  deleteUser,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getDatabase,
   ref,
   set,
   get,
+  remove,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
@@ -59,10 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
           const btnReset = document.createElement("button");
           btnReset.classList.add("btn-reset");
           btnReset.textContent = "Reset Password";
+          btnReset.dataset.email = data.email;
 
           const btnDelete = document.createElement("button");
           btnDelete.classList.add("btn-delete");
           btnDelete.textContent = "Delete";
+          btnDelete.dataset.uid = userID;
 
           tdActions.appendChild(btnReset);
           tdActions.appendChild(btnDelete);
@@ -72,8 +77,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
           tBody.appendChild(tRow);
         }
+
+        tBody.querySelectorAll(".btn-reset").forEach((btn) => {
+          btn.addEventListener("click", handleResetPassword);
+        });
+
+        tBody.querySelectorAll(".btn-delete").forEach((btn) => {
+          btn.addEventListener("click", handleDeleteAccount);
+        });
       }
     });
+  }
+
+  async function handleResetPassword(event) {
+    const email = event.target.dataset.email;
+
+    const confirmReset = confirm(
+      `Are you sure you want to reset the password for ${email}?`
+    );
+    if (!confirmReset) return;
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert(`Password reset email sent to ${email}`);
+    } catch (error) {
+      console.error("Error resetting password: ", error);
+      alert(error.message);
+    }
+  }
+
+  async function handleDeleteAccount(event) {
+    const userId = event.target.dataset.uid;
+
+    const confirmDelete = confirm(
+      `Are you sure you want to delete this account?`
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await remove(ref(database, `admins/${userId}`));
+
+      displayAccount();
+      alert(`Admin account deleted successfully`);
+    } catch (error) {
+      console.error("Error deleting account: ", error);
+      alert(error.message);
+    }
   }
 
   // ADD ACCOUNT
@@ -103,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         addEmail.value = "";
         addPassword.value = "";
+        displayAccount();
       } catch (error) {
         console.error("Error registering: ", error);
         alert(error.message);
