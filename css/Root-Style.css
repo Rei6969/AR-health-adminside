@@ -1,0 +1,46 @@
+:root {
+  --color-name: cream;
+
+  /* BG */
+  --color-main-bg: rgba(254, 250, 224, 1);
+  --color-sub-bg: rgb(194, 194, 194);
+  --color-sub-bg-1: rgb(255, 0, 0);
+  --color-sub-bg-2: rgb(0, 255, 0);
+  --color-sub-bg-3: rgb(0, 163, 0);
+  --color-sub-bg-4: rgb(0, 255, 242);
+  --color-sub-bg-5: rgb(221, 221, 221);
+  --color-sub-bg-6: antiquewhite;
+
+  /* BUTTON */
+  --color-btn-main: rgb(255, 0, 0);
+  --color-btn-main-1: rgb(0, 255, 0);
+  --color-btn-main-2: rgba(254, 250, 224, 1);
+
+  /* BUTTON HOVER AND FOCUS */
+  --color-btn-hover-1: rgb(204, 0, 0);
+  --color-btn-hover-2: rgb(0, 204, 0);
+  --color-btn-hover-3: rgba(229, 255, 204, 1);
+  --color-btn-hover-4: rgba(254, 250, 224, 1);
+  --color-btn-hover-5: rgb(194, 194, 194);
+
+  /* OTHERS */
+  --color-link: rgb(25, 0, 255);
+  --color-font-1: rgb(36, 36, 36);
+  --color-font-2: rgb(254, 250, 224, 1);
+  --color-border-1: rgb(36, 36, 36);
+
+  /* ANNOUNCEMENT BOX */
+  --box-color-1: #708090;
+  --box-color-2: #32cd32;
+  --box-color-3: #9370db;
+  --box-color-4: #87ceeb;
+  --box-color-5: #fff;
+}
+
+body {
+  background-color: var(--color-main-bg);
+}
+
+* {
+  font-family: "Segoe UI";
+}

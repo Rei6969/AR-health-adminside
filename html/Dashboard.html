@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/c7b00d775e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>LSPU Clinic</title>
+    <link rel="shortcut icon" href="./../logo.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./../css/Root-Style.css" />
+
+    <link rel="stylesheet" href="./../css/Dashboard-Style.css" />
+    <link rel="stylesheet" href="./../css/Students-Style.css" />
+    <link rel="stylesheet" href="./../css/Announcement-Style.css" />
+    <link rel="stylesheet" href="./../css/Schedule-Style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1>Clinic</h1>
+        <img src="./../media/CLINIC LOGO/logo.png" alt="logo" />
+        <span></span>
+      </div>
+    </header>
+
+    <section class="container">
+      <aside class="sidebar">
+        <button class="btn-students sidebar-btn" aria-label="Students">
+          <img
+            src="./../media/icons/icons8-users-96.png"
+            alt="Form Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Students</span>
+        </button>
+
+        <button class="btn-announcement sidebar-btn" aria-label="Announcements">
+          <img
+            src="./../media/icons/icons8-announcement-96.png"
+            alt="Form Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Announcements</span>
+        </button>
+
+        <button class="btn-fill-up sidebar-btn" aria-label="Fill Up Forms">
+          <img
+            src="./../media/icons/icons8-form-96.png"
+            alt="Form Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Medical Records</span>
+        </button>
+
+        <button class="btn-requests sidebar-btn" aria-label="Requests">
+          <img
+            src="./../media/icons/icons8-files-100.png"
+            alt="Requests Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Requests</span>
+        </button>
+
+        <button class="btn-schedule sidebar-btn" aria-label="Schedule">
+          <img
+            src="./../media/icons/icons8-consultation-96.png"
+            alt="Schedule Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Consultation</span>
+        </button>
+
+        <button
+          class="btn-monthly-disease sidebar-btn"
+          aria-label="Monthly Disease"
+        >
+          <img
+            src="./../media/icons/icons8-calendar-plus-100.png"
+            alt="Monthly Disease Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Monthly Disease</span>
+        </button>
+
+        <button
+          class="btn-admin-accounts sidebar-btn"
+          aria-label="Admin Accounts"
+        >
+          <img
+            src="./../media/icons/icons8-system-administrator-male-96.png"
+            alt="Admin Accounts Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Admin Accounts</span>
+        </button>
+
+        <div class="arrow-container">
+          <span></span>
+          <span></span>
+        </div>
+
+        <button class="btn-logout sidebar-btn" aria-label="Logout">
+          <img
+            src="./../media/icons/icons8-logout-rounded-left-52.png"
+            alt="Logout Icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Logout</span>
+        </button>
+      </aside>
+
+      <main class="main-content">
+        <!-- STUDENTS =========================================================================================================================================== -->
+        <section class="students-container">
+          <h1 class="students-h1">Students</h1>
+          <div id="pieChart" class="chart"></div>
+
+          <h1 id="total-users"></h1>
+          <h1 id="male-users"></h1>
+          <h1 id="female-users"></h1>
+        </section>
+        <!-- STUDENTS END =========================================================================================================================================== -->
+
+        <!-- ANNOUNCEMENTS =========================================================================================================================================== -->
+        <section class="announcement-container">
+          <div class="announcement-header">
+            <h1 class="announcement-h1">Announcements</h1>
+            <button id="btn-new-announcement">New</button>
+          </div>
+
+          <div class="content-container">
+            <div class="announcement-content" id="announcement-content">
+              <!-- <div
+                class="content"
+                style="background-color: var(--box-color-1); color: #fff"
+              >
+                <div class="header">
+                  <p class="date">January 12, 2024 - 10:10 AM</p>
+                  <button
+                    class="dropdown-button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+                </div>
+
+                <div class="dropdown-menu" hidden>
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </div>
+
+                <p>asdasdasdasdasdasdasdasdasdasd</p>
+              </div> -->
+            </div>
+          </div>
+
+          <!-- <div class="new-announcement-container"> -->
+          <div class="overlay" id="overlay">
+            <button class="close-container" id="close-container">
+              &#x2715;
+            </button>
+
+            <form action="#" id="announcement-form" class="announcement-form">
+              <h1>New Announcement</h1>
+
+              <textarea
+                name="inp-content"
+                id="inp-content"
+                placeholder="Announcement Content"
+                required
+              ></textarea>
+
+              <div class="color-picker"></div>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <!-- </div> -->
+        </section>
+        <!-- ANNOUNCEMENTS END =========================================================================================================================================== -->
+
+        <!-- MEDICAL RECORDS =========================================================================================================================================== -->
+        <section class="medical-records-container">
+          <!-- <div style="display: flex; justify-content: space-between">
+            <h1 class="medical-records-h1">Medical Records</h1>
+            <input
+              type="text"
+              id="inp-search-medical-records"
+              placeholder="Search name"
+            />
+          </div> -->
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h1 class="medical-records-h1">Medical Records</h1>
+            <div style="display: flex; gap: 10px">
+              <input
+                type="text"
+                id="inp-search-medical-records"
+                placeholder="Search name"
+              />
+              <button id="btn-search-medical-records">Search</button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <th class="col-name">Name</th>
+                <th class="col-date">Date Submitted</th>
+                <th class="col-actions">Actions</th>
+              </thead>
+
+              <tbody class="medical-records-tbody">
+                <!-- <tr>
+                  <td>Ray Martin</td>
+                  <td>06/24/24</td>
+                  <td>
+                    <button class="btn-download">Download File</button>
+                    <button class="btn-delete">Delete</button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- MEDICAL RECORDS END =========================================================================================================================================== -->
+
+        <!-- REQUESTS =========================================================================================================================================== -->
+        <section class="requests-container">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h1 class="requests-h1">Requests</h1>
+            <div style="display: flex; gap: 10px">
+              <input
+                type="text"
+                id="inp-search-requests"
+                placeholder="Search name"
+              />
+              <button id="btn-search-requests">Search</button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <th class="col-status"></th>
+                <th class="col-name">Name</th>
+                <th class="col-type">Request Type</th>
+                <th class="col-date">Date Submitted</th>
+                <th class="col-file">Upload File / Input Message</th>
+                <th class="col-actions">Actions</th>
+              </thead>
+
+              <tbody class="requests-tbody">
+                <!-- <tr>
+                  <td>
+                    <span class="request-status"
+                      ><span class="tooltip">Pending</span></span
+                    >
+                  </td>
+                  <td>Ray Martin</td>
+                  <td>Xray</td>
+                  <td>06/24/24</td>
+                  <td>
+                    <input type="file" class="requests-file" maxlength="1" />
+                  </td>
+                  <td>
+                    <button class="btn-submit">Submit</button>
+                    <button class="btn-delete">Delete</button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- REQUESTS END =========================================================================================================================================== -->
+
+        <!-- SCHEDULE =========================================================================================================================================== -->
+        <section class="schedule-container">
+          <h1 class="schedule-h1">Consultation Schedule</h1>
+
+          <div class="calendar" id="calendar-app">
+            <div class="calendar--day-view" id="day-view">
+              <span class="day-view-exit" id="day-view-exit">&times;</span>
+              <span class="day-view-date" id="day-view-date">MAY 29 2016</span>
+              <div class="day-view-content">
+                <div class="day-highlight">
+                  There's
+                  <span class="day-events" id="day-events"
+                    >no schedule for today</span
+                  >. &nbsp;
+                  <span
+                    tabindex="0"
+                    onkeyup="if(event.keyCode != 13) return; this.click();"
+                    class="day-events-link"
+                    id="add-event"
+                    data-date
+                    >Request a Schedule?</span
+                  >
+                </div>
+                <div
+                  class="day-add-event"
+                  id="add-day-event-box"
+                  data-active="false"
+                >
+                  <div class="row">
+                    <div class="half">
+                      <label class="add-event-label">
+                        Purpose of Schedule
+                        <input
+                          type="text"
+                          class="add-event-edit add-event-edit--long"
+                          placeholder="New Schedule"
+                          id="input-add-event-name"
+                        />
+                      </label>
+                    </div>
+                    <div class="qtr">
+                      <label class="add-event-label">
+                        Start Time
+                        <input
+                          type="text"
+                          class="add-event-edit"
+                          placeholder="8:15"
+                          id="input-add-event-start-time"
+                          data-options="1,2,3,4,5,6,7,8,9,10,11,12"
+                          data-format="datetime"
+                        />
+                        <input
+                          type="text"
+                          class="add-event-edit"
+                          placeholder="am"
+                          id="input-add-event-start-ampm"
+                          data-options="a,p,am,pm"
+                        />
+                      </label>
+                    </div>
+                    <div class="qtr">
+                      <label class="add-event-label">
+                        End Time
+                        <input
+                          type="text"
+                          class="add-event-edit"
+                          placeholder="9"
+                          id="input-add-event-end-time"
+                          data-options="1,2,3,4,5,6,7,8,9,10,11,12"
+                          data-format="datetime"
+                        />
+                        <input
+                          type="text"
+                          class="add-event-edit"
+                          placeholder="am"
+                          id="input-add-event-end-ampm"
+                          data-options="a,p,am,pm"
+                        />
+                      </label>
+                    </div>
+                    <div class="half">
+                      <a
+                        onkeyup="if(event.keyCode != 13) return; this.click();"
+                        tabindex="0"
+                        id="add-event-save"
+                        class="event-btn--save event-btn"
+                        >save</a
+                      >
+                      <a
+                        tabindex="0"
+                        id="add-event-cancel"
+                        class="event-btn--cancel event-btn"
+                        >cancel</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div id="day-events-list" class="day-events-list"></div>
+                <div class="day-inspiration-quote" id="inspirational-quote">
+                  Every child is an artist. The problem is how to remain an
+                  artist once he grows up. Pablo Picasso
+                </div>
+              </div>
+            </div>
+            <div class="calendar--view" id="calendar-view">
+              <div class="cview__month">
+                <span class="cview__month-last" id="calendar-month-last"
+                  >Apr</span
+                >
+                <span class="cview__month-current" id="calendar-month"
+                  >May</span
+                >
+                <span class="cview__month-next" id="calendar-month-next"
+                  >Jun</span
+                >
+              </div>
+              <div class="cview__header">Sun</div>
+              <div class="cview__header">Mon</div>
+              <div class="cview__header">Tue</div>
+              <div class="cview__header">Wed</div>
+              <div class="cview__header">Thu</div>
+              <div class="cview__header">Fri</div>
+              <div class="cview__header">Sat</div>
+              <div class="calendar--view" id="dates"></div>
+            </div>
+            <div class="footer">
+              <span
+                ><span id="footer-date" class="footer__link"
+                  >Today is May 30</span
+                ></span
+              >
+            </div>
+          </div>
+        </section>
+        <!-- SCHEDULE END =========================================================================================================================================== -->
+
+        <!-- MONTHLY DISEASE =========================================================================================================================================== -->
+        <section class="monthly-disease-container">
+          <h1 class="monthly-disease-h1">Monthly Diseases</h1>
+
+          <div class="monthly-disease-content-container">
+            <!-- JANUARY ====================================================================================================================== -->
+            <div class="month-section" id="january">
+              <button class="month-btn" data-month="january">January</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- FEBRUARY ====================================================================================================================== -->
+            <div class="month-section" id="february">
+              <button class="month-btn" data-month="february">February</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- MARCH ====================================================================================================================== -->
+            <div class="month-section" id="march">
+              <button class="month-btn" data-month="march">March</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- APRIL ====================================================================================================================== -->
+            <div class="month-section" id="april">
+              <button class="month-btn" data-month="april">April</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- MAY ====================================================================================================================== -->
+            <div class="month-section" id="may">
+              <button class="month-btn" data-month="may">May</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- JUNE ====================================================================================================================== -->
+            <div class="month-section" id="june">
+              <button class="month-btn" data-month="june">June</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- JULY ====================================================================================================================== -->
+            <div class="month-section" id="july">
+              <button class="month-btn" data-month="july">July</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- AUGUST ====================================================================================================================== -->
+            <div class="month-section" id="august">
+              <button class="month-btn" data-month="august">August</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SEPTEMBER ====================================================================================================================== -->
+            <div class="month-section" id="september">
+              <button class="month-btn" data-month="september">
+                September
+              </button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- OCTOBER ====================================================================================================================== -->
+            <div class="month-section" id="october">
+              <button class="month-btn" data-month="october">October</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- NOVEMBER ====================================================================================================================== -->
+            <div class="month-section" id="november">
+              <button class="month-btn" data-month="november">November</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- DECEMBER ====================================================================================================================== -->
+            <div class="month-section" id="december">
+              <button class="month-btn" data-month="december">December</button>
+              <div class="month-content">
+                <label for="year">Year</label>
+                <input
+                  type="number"
+                  class="form-control year"
+                  max="9999"
+                  min="1000"
+                  required
+                />
+
+                <label for="disease-image">Disease Image</label>
+                <input
+                  type="file"
+                  class="form-control disease-image"
+                  maxlength="1"
+                  accept="image/*"
+                  required
+                />
+
+                <label for="disease-name">Disease Name</label>
+                <input type="text" class="form-control disease-name" required />
+
+                <label for="description">Description</label>
+                <textarea class="form-control description" required></textarea>
+
+                <div class="symptoms-section">
+                  <label for="symptoms">Symptoms</label>
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                  <input type="text" class="form-control symptoms-inp" />
+                </div>
+
+                <div style="display: flex; justify-content: space-between">
+                  <button class="btn-clear">Clear Month</button>
+                  <button class="btn-submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- MONTHLY DISEASE END =========================================================================================================================================== -->
+
+        <!-- ADMIN ACCOUNT =========================================================================================================================================== -->
+        <section class="admin-accounts-container">
+          <h1 class="admin-accounts-h1">Admin Accounts</h1>
+
+          <div class="table-container">
+            <button class="btn-add">Add</button>
+
+            <section class="add-account-container">
+              <input
+                type="email"
+                class="inp-field"
+                id="add-account-inp-email"
+                placeholder="Enter your Email"
+                required
+              />
+
+              <input
+                type="password"
+                class="inp-field"
+                id="add-account-inp-password"
+                placeholder="Create Password"
+                required
+              />
+
+              <button class="btn-add-account">Add Account</button>
+            </section>
+
+            <table>
+              <thead>
+                <th class="col-email">Email</th>
+                <!-- <th class="col-date">Date Created</th> -->
+                <th class="col-actions">Actions</th>
+              </thead>
+
+              <tbody class="account-tbody">
+                <tr>
+                  <td>Ray Martin</td>
+                  <!-- <td>06/24/24</td> -->
+                  <td>
+                    <button class="btn-reset">Reset Password</button>
+                    <button class="btn-delete">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <!-- ADMIN END =========================================================================================================================================== -->
+      </main>
+    </section>
+
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+      type="module"
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+      type="module"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script src="./../js/Dashboard-Script.js"></script>
+    <script type="module" src="./../js/Students-Script.js" defer></script>
+    <script type="module" src="./../js/Announcement-Script.js" defer></script>
+    <script
+      type="module"
+      src="./../js/Medical-Records-Script.js"
+      defer
+    ></script>
+    <script type="module" src="./../js/Requests-Script.js" defer></script>
+    <script type="module" src="./../js/Schedule-Script.js" defer></script>
+    <script
+      type="module"
+      src="./../js/Monthly-Disease-Script.js"
+      defer
+    ></script>
+    <script type="module" src="./../js/Account-Script.js" defer></script>
+  </body>
+</html>
